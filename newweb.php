@@ -5,6 +5,7 @@
   </head>
   <body>
 	  <button></button>
+	  <?php
 	$servername = "localhost";
 $username = "sql9609690";
 $password = "s24BhEihFV";
@@ -27,6 +28,7 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
+?>
 	<!--This draws the canvas on the webpage -->
     <canvas id="mycanvas"></canvas> 
   </body>
