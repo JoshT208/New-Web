@@ -5,20 +5,28 @@
   </head>
   <body>
 	  <button></button>
-	  <?php
-$servername = "localhost";
-$username = "username";
-$password = "password";
+	$servername = "localhost";
+$username = "sql9609690";
+$password = "s24BhEihFV";
+$dbname = "sql9609690";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
-
+$conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully";
-?>
+
+$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('John', 'Doe', 'john@example.com')";
+
+if ($conn->query($sql) === TRUE) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
 	<!--This draws the canvas on the webpage -->
     <canvas id="mycanvas"></canvas> 
   </body>
@@ -42,10 +50,10 @@ while(!rs.eof)
    document.write(rs.fields(1));
    rs.movenext;
 }
-*/
+
 	  
 rs.close;
-connection.close; 
+connection.close; */
   var programCode = function(processingInstance) {
     with (processingInstance) {
       size(400, 400); 
